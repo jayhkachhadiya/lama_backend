@@ -17,10 +17,12 @@ app.use(
   cors({
     origin: "https://jay-kachhadiya.vercel.app",
     // origin: "http://localhost:3000",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => res.send("Lama backend run successfully!"));
 
