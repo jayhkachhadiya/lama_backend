@@ -12,15 +12,7 @@ const port = process.env.PORT;
 const mongoURI = process.env.DATABASE_URL;
 
 app.use(express.json());
-
-app.use(
-  cors({
-    origin: "https://jay-kachhadiya.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
-
+app.use(cors());
 
 app.get("/", (req, res) => res.send("Lama backend run successfully!"));
 
