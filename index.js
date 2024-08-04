@@ -13,10 +13,9 @@ const mongoURI = process.env.DATABASE_URL;
 
 app.use(express.json());
 
-app.use(cors(corsOptions));
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://jay-kachhadiya.vercel.app", // Replace with your frontend domain
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
