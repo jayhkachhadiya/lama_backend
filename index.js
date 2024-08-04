@@ -12,9 +12,12 @@ const port = process.env.PORT;
 const mongoURI = process.env.DATABASE_URL;
 
 app.use(express.json());
+
+app.use(cors(corsOptions));
 app.use(
   cors({
-    origin: "https://your-frontend-domain.com", // Replace with your frontend domain
+    // origin:"https://lama-frontend-seven.vercel.app/"
+    origin: "http://localhost:3000", // Replace with your frontend domain
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
