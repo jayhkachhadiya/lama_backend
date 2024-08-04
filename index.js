@@ -16,8 +16,7 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use(
   cors({
-    // origin:"https://lama-frontend-seven.vercel.app/"
-    origin: "http://localhost:3000", // Replace with your frontend domain
+    origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
