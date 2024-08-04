@@ -14,8 +14,8 @@ const mongoURI = process.env.DATABASE_URL;
 
 app.use(express.json());
 const corsOptions = {
-  // origin: "https://lama-frontend-seven.vercel.app",
-  origin: 'http://localhost:3000',
+  origin: "https://lama-frontend-seven.vercel.app",
+  // origin: 'http://localhost:3000',
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
