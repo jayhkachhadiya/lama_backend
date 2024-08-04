@@ -15,7 +15,8 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // Replace with your frontend domain
+    origin: "https://jay-kachhadiya.vercel.app",
+    // origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
