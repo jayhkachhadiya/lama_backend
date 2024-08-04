@@ -1,15 +1,12 @@
 const projectModel = require("../models/projectModel");
-const userModel = require("../models/userModel");
 
 exports.addProject = async (req, res) => {
   try {
     const { projectName } = req.body;
-    console.log(projectName,"projectNameprojectNameprojectName")
-    const userId = req.user.id;
+    console.log(projectName, "projectNameprojectNameprojectName");
     if (projectName) {
       const project = new projectModel({
         projectName,
-        userId,
       });
       await project.save();
       return res.status(200).json({
@@ -30,19 +27,10 @@ exports.addProject = async (req, res) => {
 
 exports.getProject = async (req, res) => {
   try {
-    const userId = req.user.id;
-    const userData = await userModel.findById(userId);
-
-    if (userData) {
-      const response = await projectModel.find({ userId: userId });
-      return res.status(200).json({
-        response,
-      });
-    } else {
-      return res.status(400).json({
-        message: "user not found",
-      });
-    }
+    const response = await projectModel.find();
+    return res.status(200).json({
+      response,
+    });
   } catch (error) {
     console.log(error, "errorerror");
     return res.status(500).json({

@@ -6,14 +6,13 @@ const {
   editDetail,
   deleteDetail,
 } = require("../controllers/upload");
-const checkUserAuth = require("../middleware/auth");
 const router = express.Router();
 
-router.get("/:projectId", checkUserAuth, getUploadDetail);
-router.get("/data/:id", checkUserAuth, getUploadDetailById);
-  
-router.put("/:id", checkUserAuth, editDetail);
-router.delete("/:id", checkUserAuth, deleteDetail);
-router.post("/add", checkUserAuth, addUploadDetail);
+router.get("/:projectId", getUploadDetail);
+router.get("/data/:id", getUploadDetailById);
+
+router.put("/:id", editDetail);
+router.delete("/:id", deleteDetail);
+router.post("/add", addUploadDetail);
 
 module.exports = router;

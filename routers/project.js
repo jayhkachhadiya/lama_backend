@@ -4,11 +4,10 @@ const {
   getProject,
   getProjectById,
 } = require("../controllers/project");
-const checkUserAuth = require("../middleware/auth");
 const router = express.Router();
 
-router.get("/", checkUserAuth, getProject);
-router.get("/:id", checkUserAuth, getProjectById);
-router.post("/add", checkUserAuth, addProject);
+router.get("/", getProject);
+router.get("/:id", getProjectById);
+router.post("/add", addProject);
 
 module.exports = router;
